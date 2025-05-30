@@ -1,18 +1,28 @@
 import { Link } from "react-router-dom";
 import { About } from "./About";
 import { Carousel } from "../components/Carousel";
-import { albumsData, equirement, gallaryData, orderData, tracks } from "../constant";
-import { Equirement } from "../components/Equirement";
+import {
+  albumsData,
+  equirement,
+  gallaryData,
+  orderData,
+  tracks,
+} from "../constant";
+import { CaruselWidthModal } from "../components/CaruselWidthModal";
 import { Music } from "../components/Music";
 
 export const Home = () => {
   return (
     <div className="flex flex-col gap-8">
       <div className="min-h-screen bg-black text-white flex flex-col items-center justify-center p-8 text-center">
-        <h1 className="text-5xl font-extrabold text-purple-500 mb-6">
-          WakeUp Studio
+        <h1 className="mb-6">
+          <img
+            src="/header.jpg"
+            alt="WakeUp Studio"
+            className="w-full max-w-[500px] mx-auto"
+          />
         </h1>
-        <div className="flex flex-col md:flex-row items-center justify-center bg-black text-white p-8 rounded-2xl shadow-lg my-12">
+        <div className="flex flex-col md:flex-row items-center justify-center bg-black text-white p-8 rounded-2xl shadow-lg">
           <img
             src="./image.png"
             alt="Подарок 🎁"
@@ -41,10 +51,10 @@ export const Home = () => {
       </div>
       <About />
       <Music />
-      <Carousel data={albumsData}/>
+      <Carousel data={albumsData} />
       <Carousel data={gallaryData} />
-      <Carousel data={orderData} />
-      <Equirement title={"Оборудование"} data={equirement} />
+      <CaruselWidthModal title={orderData.title} data={orderData.data} />
+      <CaruselWidthModal title={"Оборудование"} data={equirement} />
       <div className="mt-10 text-gray-400 flex flex-col">
         <p>Почта: wakeupstudiomoscow@mail.ru</p>
         <div className="flex gap-4">

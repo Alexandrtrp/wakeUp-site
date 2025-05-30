@@ -3,10 +3,10 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-export const Equirement = ({ title, data }) => {
+export const CaruselWidthModal = ({ title, data }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState(null);
-  const [currentText, setCurrentText] = useState("");
+  const [currentText, setCurrentText] = useState([]);
 
   const openModal = (item) => {
     setCurrentImage(item.image);
@@ -64,7 +64,6 @@ export const Equirement = ({ title, data }) => {
               alt={`Slide ${index}`}
               className="w-full h-auto max-h-[400px] object-contain rounded-lg"
             />
-            {/* <p className="text-sm md:text-base text-center">{el.description}</p> */}
           </div>
         ))}
       </Slider>
@@ -87,7 +86,11 @@ export const Equirement = ({ title, data }) => {
             />
 
             {/* Текст */}
-            <p className="mt-4 text-center text-lg text-black">{currentText}</p>
+            {currentText.map((text) => (
+              <p className="mt-4 text-center text-lg text-black">
+                {text}
+              </p>
+            ))}
           </div>
         </div>
       )}

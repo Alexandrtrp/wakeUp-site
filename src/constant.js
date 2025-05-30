@@ -1,26 +1,26 @@
 export const gallaryData = {
   title: "Галерея студии",
   images: [
-    "/gallary/photo_2025-05-27_12-19-39.jpg",
-    "/gallary/photo_2025-05-27_12-19-40.jpg",
-    "/gallary/photo_2025-05-27_12-19-42.jpg",
+    "gallary/photo_2025-05-27_12-19-39.jpg",
+    "gallary/photo_2025-05-27_12-19-40.jpg",
+    "gallary/photo_2025-05-27_12-19-42.jpg",
   ],
 };
 
 export const orderData = {
   title: "Услуги",
   images: [
-    "/order/photo_2025-05-27_12-19-18.jpg",
-    "/order/photo_2025-05-27_12-19-19.jpg",
-    "/order/photo_2025-05-27_12-19-20.jpg",
-    "/order/photo_2025-05-27_12-19-20 (2).jpg",
+    "order/photo_2025-05-27_12-19-18.jpg",
+    "order/photo_2025-05-27_12-19-19.jpg",
+    "order/photo_2025-05-27_12-19-20.jpg",
+    "order/photo_2025-05-27_12-19-20 (2).jpg",
   ],
 };
 
 export const equirement = [
   {
     title: "Микрофон Rode NT1 ",
-    image: "/equirements/micro.jpg",
+    image: "equirements/micro.jpg",
     description: `Rode NT1 5th Generation - обновленная
 версия популярного кардиоидного
 микрофона Rode NT1 с аксессуарами в
@@ -33,13 +33,13 @@ export const equirement = [
   },
   {
     title: "Студийные мониторы JBL 305P MKII",
-    image: "/equirements/monitor.jpg",
+    image: "equirements/monitor.jpg",
     description:
       "Студийный монитор JBL 305P MkII — следующее поколение монитора JBL LSR305. Модернизация и усовершенствования делают легендарную производительность JBL. Благодаря революционному волноводу JBL Image Control Waveguide и усовершенствованным преобразователям, JBL 305P MkII предлагает потрясающие детали, точную визуализацию, расширение зоны «sweet spot» и впечатляющий динамический диапазон, который расширяет возможности микширования любого современного рабочего пространства.",
   },
   {
     title: "Наушники Beyerdynamic DT 770 pro (x2)",
-    image: "/equirements/naush.jpg",
+    image: "equirements/naush.jpg",
     description: `Динамические наушники закрытого типа Beyerdynamic DT 770 PRO были
 разработаны с учетом требований и
 пожеланий профессиональных
@@ -57,12 +57,12 @@ DT 770 PRO обеспечивает более надежную
   },
   {
     title: "Звуковая карта Volt 2",
-    image: "/equirements/zvuk-karta.jpg",
+    image: "equirements/zvuk-karta.jpg",
     description: `Одна из главных особенностей серии VOLT – режим предусиления, который эмулирует работу лампового преампа Universal Audio 610, который использовали артисты от Рэя Чарльза до Ван Халена. Преамп аудиокарты работает с сигналом микрофонного/линейного/инструментального уровней.`,
   },
   {
     title: "Предусилитель Behringer HA400 MICROAMP",
-    image: "/equirements/pred.jpg",
+    image: "equirements/pred.jpg",
     description: `Этот супер компактный
 стереофонический усилитель-
 распределитель работает практически со
@@ -87,37 +87,37 @@ export const tracks = [
     {
     title: "Трек 1",
     artist: "Исполнитель 1",
-    image: "/tracks-photo/1.jpg", // ссылка на обложку
-    audioSrc: "/tracks-audio/before1.mp3" // путь к треку
+    image: "tracks-photo/1.jpg", // ссылка на обложку
+    audioSrc: "tracks-audio/before1.mp3" // путь к треку
   },
   {
     title: "Трек 1",
     artist: "Исполнитель 1",
-    image: "/tracks-photo/1.jpg",
-    audioSrc: "/tracks-audio/after1.mp3"
+    image: "tracks-photo/1.jpg",
+    audioSrc: "tracks-audio/after1.mp3"
   },
       {
     title: "Трек 2",
     artist: "Исполнитель 2",
-    image: "/tracks-photo/2.jpg", // ссылка на обложку
-    audioSrc: "/tracks-audio/before2.mp3" // путь к треку
+    image: "tracks-photo/2.jpg", // ссылка на обложку
+    audioSrc: "tracks-audio/before2.mp3" // путь к треку
   },
   {
     title: "Трек 2",
     artist: "Исполнитель 2",
-    image: "/tracks-photo/2.jpg",
-    audioSrc: "/tracks-audio/after2.mp3"
+    image: "tracks-photo/2.jpg",
+    audioSrc: "tracks-audio/after2.mp3"
   },
         {
     title: "Трек 3",
     artist: "Исполнитель 3",
-    image: "/tracks-photo/3.jpg", // ссылка на обложку
-    audioSrc: "/tracks-audio/before3.mp3" // путь к треку
+    image: "tracks-photo/3.jpg", // ссылка на обложку
+    audioSrc: "tracks-audio/before3.mp3" // путь к треку
   },
   {
     title: "Трек 3",
     artist: "Исполнитель 3",
-    image: "/tracks-photo/3.jpg",
-    audioSrc: "/tracks-audio/after3.mp3"
+    image: "tracks-photo/3.jpg",
+    audioSrc: "tracks-audio/after3.mp3"
   },
 ]

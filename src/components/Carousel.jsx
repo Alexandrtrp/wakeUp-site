@@ -41,7 +41,7 @@ export const Carousel = ({ data }) => {
             className="flex flex-col items-center justify-center bg-black text-white p-4"
           >
             <img
-              src={image}
+              src={`./${image}`}
               alt={`Slide ${index}`}
               className="w-full h-auto max-h-[400px] object-contain rounded-lg"
             />

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { About } from "./About";
 import { Carousel } from "../components/Carousel";
-import { equirement, gallaryData, orderData } from "../constant";
+import { albumsData, equirement, gallaryData, orderData, tracks } from "../constant";
 import { Equirement } from "../components/Equirement";
 import { Music } from "../components/Music";
 
@@ -41,6 +41,7 @@ export const Home = () => {
       </div>
       <About />
       <Music />
+      <Carousel data={albumsData}/>
       <Carousel data={gallaryData} />
       <Carousel data={orderData} />
       <Equirement title={"Оборудование"} data={equirement} />
@@ -55,7 +56,7 @@ export const Home = () => {
         </div>
         <p>Адрес: Москва, Каширское шоссе 26к3</p>
         <Link to="https://vk.com/wakeupstuuu">VK: WakeUp Studio </Link>
-        <Link to='https://t.me/wakeupstudio'>ТГ: @wakeupstudiomcs</Link>
+        <Link to="https://t.me/wakeupstudio">ТГ: @wakeupstudiomcs</Link>
       </div>
     </div>
   );

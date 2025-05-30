@@ -3,9 +3,9 @@ import { About } from "./About";
 import { Carousel } from "../components/Carousel";
 import { equirement, gallaryData, orderData } from "../constant";
 import { Equirement } from "../components/Equirement";
+import { Music } from "../components/Music";
 
 export const Home = () => {
-
   return (
     <div className="flex flex-col gap-8">
       <div className="min-h-screen bg-black text-white flex flex-col items-center justify-center p-8 text-center">
@@ -14,13 +14,13 @@ export const Home = () => {
         </h1>
         <div className="flex flex-col md:flex-row items-center justify-center bg-black text-white p-8 rounded-2xl shadow-lg my-12">
           <img
-            src="/image.png" 
+            src="/image.png"
             alt="Подарок 🎁"
             className="w-24 h-24 md:w-32 md:h-32 mb-4 md:mb-0 md:mr-8"
           />
           <div>
             <h2 className="text-3xl md:text-4xl font-bold text-purple-400 mb-2">
-               Пожизненные скидки до 15%
+              Пожизненные скидки до 15%
             </h2>
             <p className="text-lg text-gray-300">
               Успейте воспользоваться уникальной акцией и получите специальные
@@ -40,9 +40,10 @@ export const Home = () => {
         </Link>
       </div>
       <About />
+      <Music />
       <Carousel data={gallaryData} />
       <Carousel data={orderData} />
-      <Equirement title={'Оборудование'} data={equirement}/>
+      <Equirement title={"Оборудование"} data={equirement} />
     </div>
   );
 };

@@ -1,6 +1,7 @@
 {
   "name": "melon-music-react",
   "version": "1.0.0",
+  "homepage": "https://alexandrtrp.github.io/wakeup-site",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

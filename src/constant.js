@@ -85,37 +85,37 @@ DT 770 PRO обеспечивает более надежную
 
 export const tracks = [
     {
-    title: "Трек 1",
+    title: "Трек 1 до обработки",
     artist: "Исполнитель 1",
     image: "tracks-photo/1.jpg", // ссылка на обложку
     audioSrc: "tracks-audio/before1.mp3" // путь к треку
   },
   {
-    title: "Трек 1",
+    title: "Трек 1 после обработки",
     artist: "Исполнитель 1",
     image: "tracks-photo/1.jpg",
     audioSrc: "tracks-audio/after1.mp3"
   },
       {
-    title: "Трек 2",
+    title: "Трек 2 до обработки",
     artist: "Исполнитель 2",
     image: "tracks-photo/2.jpg", // ссылка на обложку
     audioSrc: "tracks-audio/before2.mp3" // путь к треку
   },
   {
-    title: "Трек 2",
+    title: "Трек 2 после обработки",
     artist: "Исполнитель 2",
     image: "tracks-photo/2.jpg",
     audioSrc: "tracks-audio/after2.mp3"
   },
         {
-    title: "Трек 3",
+    title: "Трек 3 до обработки",
     artist: "Исполнитель 3",
     image: "tracks-photo/3.jpg", // ссылка на обложку
     audioSrc: "tracks-audio/before3.mp3" // путь к треку
   },
   {
-    title: "Трек 3",
+    title: "Трек 3 после обработки",
     artist: "Исполнитель 3",
     image: "tracks-photo/3.jpg",
     audioSrc: "tracks-audio/after3.mp3"

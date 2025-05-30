@@ -14,7 +14,7 @@ export const Home = () => {
         </h1>
         <div className="flex flex-col md:flex-row items-center justify-center bg-black text-white p-8 rounded-2xl shadow-lg my-12">
           <img
-            src="/image.png"
+            src="./image.png"
             alt="Подарок 🎁"
             className="w-24 h-24 md:w-32 md:h-32 mb-4 md:mb-0 md:mr-8"
           />
@@ -55,7 +55,7 @@ export const Home = () => {
         </div>
         <p>Адрес: Москва, Каширское шоссе 26к3</p>
         <Link to="https://vk.com/wakeupstuuu">VK: WakeUp Studio </Link>
-        <Link>ТГ: @wakeupstudiomcs</Link>
+        <Link to='https://t.me/wakeupstudio'>ТГ: @wakeupstudiomcs</Link>
       </div>
     </div>
   );

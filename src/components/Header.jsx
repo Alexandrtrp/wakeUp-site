@@ -5,7 +5,7 @@ export function Header() {
 
   const links = [
     { to: "/", label: "Главная" },
-    { to: "/services", label: "Услуги" },
+    // { to: "/services", label: "Услуги" },
     { to: "/about", label: "О нас" },
     { to: "/contact", label: "Контакты" },
   ];

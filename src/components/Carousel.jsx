@@ -1,52 +1,59 @@
-import { useState } from "react";
-// import "../../public/gallary/photo_2025-05-27_12-19-39.png";
+import React, { useState } from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
-export const Carousel = ({title, images}) => {
+export const Carousel = ({ data }) => {
 
-  const [current, setCurrent] = useState(0);
-
-  const prevSlide = () => {
-    setCurrent((prev) => (prev === 0 ? images.length - 1 : prev - 1));
-  };
-
-  const nextSlide = () => {
-    setCurrent((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          arrows: false, // скрыть стрелки на телефонах
+        },
+      },
+    ],
   };
 
   return (
-    <div>
+    <div className="w-full max-w-4xl mx-auto p-4">
       <h2 className="text-4xl md:text-5xl font-bold text-purple-400 text-center mb-6">
-        {title}
+        {data.title}
       </h2>
-      <div className="relative w-full max-w-3xl m-auto p-2 overflow-hidden rounded-lg shadow-lg">
-        <img
-          src={images[current]}
-          alt={`Slide ${current + 1}`}
-          className="w-full h-auto  object-contain transition duration-500"
-        />
-        <button
-          onClick={prevSlide}
-          className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-black bg-opacity-50 text-white rounded-full p-2"
-        >
-          &#8592;
-        </button>
-        <button
-          onClick={nextSlide}
-          className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-black bg-opacity-50 text-white rounded-full p-2"
-        >
-          &#8594;
-        </button>
-        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-          {images.map((_, index) => (
-            <span
-              key={index}
-              className={`w-3 h-3 rounded-full ${
-                index === current ? "bg-white" : "bg-gray-400"
-              }`}
-            ></span>
-          ))}
-        </div>
-      </div>
+      <Slider {...settings}>
+        {data.images.map((image, index) => (
+          <div
+            key={index}
+            className="flex flex-col items-center justify-center bg-black text-white p-4"
+          >
+            <img
+              src={image}
+              alt={`Slide ${index}`}
+              className="w-full h-auto max-h-[400px] object-contain rounded-lg"
+            />
+            {/* <h2 className="text-2xl md:text-3xl font-bold mt-4 text-center">
+              {slide.title}
+            </h2>
+            <p className="text-sm md:text-base text-center">
+              {slide.description}
+            </p> */}
+          </div>
+        ))}
+      </Slider>
     </div>
   );
 };

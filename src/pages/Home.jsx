@@ -1,20 +1,10 @@
 import { Link } from "react-router-dom";
 import { About } from "./About";
 import { Carousel } from "../components/Carousel";
+import { equirement, gallaryData, orderData } from "../constant";
+import { Equirement } from "../components/Equirement";
 
 export const Home = () => {
-  const gallaryImages = [
-    "/gallary/photo_2025-05-27_12-19-39.jpg",
-    "/gallary/photo_2025-05-27_12-19-40.jpg",
-    "/gallary/photo_2025-05-27_12-19-42.jpg",
-  ];
-
-  const orderImages = [
-    "/order/photo_2025-05-27_12-19-18.jpg",
-    "/order/photo_2025-05-27_12-19-19.jpg",
-    "/order/photo_2025-05-27_12-19-20.jpg",
-    "/order/photo_2025-05-27_12-19-20 (2).jpg",
-  ];
 
   return (
     <div className="flex flex-col gap-8">
@@ -24,7 +14,7 @@ export const Home = () => {
         </h1>
         <div className="flex flex-col md:flex-row items-center justify-center bg-black text-white p-8 rounded-2xl shadow-lg my-12">
           <img
-            src="/gift-purple.png" 
+            src="/image.png" 
             alt="Подарок 🎁"
             className="w-24 h-24 md:w-32 md:h-32 mb-4 md:mb-0 md:mr-8"
           />
@@ -50,8 +40,9 @@ export const Home = () => {
         </Link>
       </div>
       <About />
-      <Carousel title={"Галерея студии"} images={gallaryImages} />
-      <Carousel title={"Услуги"} images={orderImages} />
+      <Carousel data={gallaryData} />
+      <Carousel data={orderData} />
+      <Equirement title={'Оборудование'} data={equirement}/>
     </div>
   );
 };

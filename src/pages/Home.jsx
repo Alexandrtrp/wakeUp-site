@@ -10,6 +10,7 @@ import {
 } from "../constant";
 import { CaruselWidthModal } from "../components/CaruselWidthModal";
 import { Music } from "../components/Music";
+import { Footer } from "../components/Footer";
 
 export const Home = () => {
   return (
@@ -17,7 +18,7 @@ export const Home = () => {
       <div className="min-h-screen bg-black text-white flex flex-col items-center justify-center p-8 text-center">
         <h1 className="mb-6">
           <img
-            src="/header.jpg"
+            src="./header.jpg"
             alt="WakeUp Studio"
             className="w-full max-w-[500px] mx-auto"
           />
@@ -55,19 +56,7 @@ export const Home = () => {
       <Carousel data={gallaryData} />
       <CaruselWidthModal title={orderData.title} data={orderData.data} />
       <CaruselWidthModal title={"Оборудование"} data={equirement} />
-      <div className="mt-10 text-gray-400 flex flex-col">
-        <p>Почта: wakeupstudiomoscow@mail.ru</p>
-        <div className="flex gap-4">
-          <p>Телефон:</p>
-          <div className="flex flex-col">
-            <span>+7 (968) 458 62 94</span>
-            <span>+7 (977) 627 09 27</span>
-          </div>
-        </div>
-        <p>Адрес: Москва, Каширское шоссе 26к3</p>
-        <Link to="https://vk.com/wakeupstuuu">VK: WakeUp Studio </Link>
-        <Link to="https://t.me/wakeupstudio">ТГ: @wakeupstudiomcs</Link>
-      </div>
+      <Footer/>
     </div>
   );
 };

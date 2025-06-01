@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import emailjs from "emailjs-com";
+import { Footer } from "../components/Footer";
 
 export const Contact = () => {
   const [formData, setFormData] = useState({
@@ -17,22 +18,22 @@ export const Contact = () => {
     e.preventDefault();
     setStatus("loading");
 
-    try {
-      const response = await fetch("https://formspree.io/f/yourFormID", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        setStatus("success");
-        setFormData({ name: "", email: "", message: "" });
-      } else {
-        setStatus("error");
-      }
-    } catch {
-      setStatus("error");
-    }
+    emailjs
+      .send(
+        "service_7gixz8d",     // замените на ваш Service ID
+        "template_t9fjor6",    // замените на ваш Template ID
+        formData,
+        "your_public_key"      // замените на ваш Public Key
+      )
+      .then(
+        (result) => {
+          setStatus("success");
+          setFormData({ name: "", email: "", message: "" });
+        },
+        (error) => {
+          setStatus("error");
+        }
+      );
   };
 
   return (
@@ -82,20 +83,7 @@ export const Contact = () => {
       {status === "error" && (
         <p className="text-red-500 mt-4">Ошибка отправки. Попробуйте позже.</p>
       )}
-
-      <div className="mt-10 text-gray-400 flex flex-col">
-        <p>Почта: wakeupstudiomoscow@mail.ru</p>
-        <div className="flex gap-4">
-          <p>Телефон:</p>
-          <div className="flex flex-col">
-            <span>+7 (968) 458 62 94</span> 
-            <span>+7 (977) 627 09 27</span>
-          </div>
-        </div>
-        <p>Адрес: Москва, Каширское шоссе 26к3</p>
-        <Link to="https://vk.com/wakeupstuuu">VK: WakeUp Studio </Link>
-        <Link>ТГ: @wakeupstudiomcs</Link>
-      </div>
+      <Footer />
     </div>
   );
 };

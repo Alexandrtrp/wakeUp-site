@@ -9,21 +9,47 @@ export const Contact = () => {
     message: "",
   });
   const [status, setStatus] = useState(null);
+  const [errors, setErrors] = useState({});
+
+  const validate = () => {
+    const newErrors = {};
+    if (!formData.name || formData.name.trim().length < 2) {
+      newErrors.name = "Имя должно содержать минимум 2 символа";
+    }
+    if (!formData.email || !/^\S+@\S+\.\S+$/.test(formData.email)) {
+      newErrors.email = "Введите корректный email";
+    }
+    if (!formData.message || formData.message.trim().length < 10) {
+      newErrors.message = "Сообщение должно содержать минимум 10 символов";
+    }
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
 
   const handleChange = (e) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    setErrors((prev) => ({ ...prev, [e.target.name]: "" })); // Очищаем ошибку для поля
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!validate()) {
+      return; // Остановить, если есть ошибки
+    }
+
     setStatus("loading");
 
     emailjs
       .send(
-        "service_7gixz8d",     // замените на ваш Service ID
-        "template_t9fjor6",    // замените на ваш Template ID
-        formData,
-        "your_public_key"      // замените на ваш Public Key
+        "service_ua3fcng",
+        "template_1b5tl73",
+        {
+          from_name: formData.name, // Имя пользователя
+          from_email: "wakeupstudiomoscow@mail.ru", // Должен быть твой Mail.ru адрес
+          message: formData.message,
+          reply_to: formData.email, // Укажи email пользователя сюда
+        },
+        "BCmbvqcNZz_udblua"
       )
       .then(
         (result) => {
@@ -42,33 +68,54 @@ export const Contact = () => {
         Связаться с нами
       </h1>
       <form className="space-y-4" onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-          placeholder="Ваше имя"
-          className="w-full p-3 rounded bg-gray-900 text-white"
-          required
-        />
-        <input
-          type="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          placeholder="Email"
-          className="w-full p-3 rounded bg-gray-900 text-white"
-          required
-        />
-        <textarea
-          name="message"
-          rows="5"
-          value={formData.message}
-          onChange={handleChange}
-          placeholder="Сообщение"
-          className="w-full p-3 rounded bg-gray-900 text-white"
-          required
-        />
+        <div>
+          <input
+            type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            placeholder="Ваше имя"
+            className={`w-full p-3 rounded bg-gray-900 text-white ${
+              errors.name ? "border border-red-500" : ""
+            }`}
+            required
+          />
+          {errors.name && (
+            <p className="text-red-500 text-sm mt-1">{errors.name}</p>
+          )}
+        </div>
+        <div>
+          <input
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            placeholder="Email"
+            className={`w-full p-3 rounded bg-gray-900 text-white ${
+              errors.email ? "border border-red-500" : ""
+            }`}
+            required
+          />
+          {errors.email && (
+            <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+          )}
+        </div>
+        <div>
+          <textarea
+            name="message"
+            rows="5"
+            value={formData.message}
+            onChange={handleChange}
+            placeholder="Сообщение"
+            className={`w-full p-3 rounded bg-gray-900 text-white ${
+              errors.message ? "border border-red-500" : ""
+            }`}
+            required
+          />
+          {errors.message && (
+            <p className="text-red-500 text-sm mt-1">{errors.message}</p>
+          )}
+        </div>
         <button
           type="submit"
           className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded font-semibold"

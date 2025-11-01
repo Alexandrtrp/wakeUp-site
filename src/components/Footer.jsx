@@ -5,7 +5,6 @@ export const Footer = () => (
     <div className="flex gap-4">
       <p>Телефон:</p>
       <div className="flex flex-col">
-        <span>+7 (968) 458 62 94</span>
         <span>+7 (977) 627 09 27</span>
       </div>
     </div>

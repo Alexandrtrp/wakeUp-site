@@ -8,7 +8,7 @@ import { Contact } from "./pages/Contact";
 
 export default function App() {
   return (
-    <Router basename="/wakeUp-site">
+    <Router>
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />

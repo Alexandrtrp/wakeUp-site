@@ -1,9 +1,9 @@
 export const gallaryData = {
   title: "Галерея студии",
   images: [
-    "gallary/photo_2025-05-27_12-19-39.jpg",
-    "gallary/photo_2025-05-27_12-19-40.jpg",
-    "gallary/photo_2025-05-27_12-19-42.jpg",
+    "gallary/1.jpg",
+    "gallary/2.jpg",
+    "gallary/3.jpg",
   ],
 };
 
@@ -11,11 +11,11 @@ export const orderData = {
   title: "Услуги",
   data: [
     {
-      image: "order/photo_2025-05-27_12-19-18.jpg",
+      image: "order/1.jpg",
       description: ["Час записи вокала", " Час записи инструментала "],
     },
     {
-      image: "order/photo_2025-05-27_12-19-19.jpg",
+      image: "order/2.jpg",
       description: [
         "В услугу включено:",
         "Ручная коррекция нот ",
@@ -126,32 +126,32 @@ export const tracks = [
   {
     title: "Трек 1 до обработки",
     artist: "Исполнитель 1",
-    audioSrc: "tracks-audio/before1.mp3", // путь к треку
+    audioSrc: "tracks-audio/before1.wav", // путь к треку
   },
   {
     title: "Трек 1 после обработки",
     artist: "Исполнитель 1",
-    audioSrc: "tracks-audio/after1.mp3",
+    audioSrc: "tracks-audio/after1.wav",
   },
   {
     title: "Трек 2 до обработки",
     artist: "Исполнитель 2",
-    audioSrc: "tracks-audio/before2.mp3", // путь к треку
+    audioSrc: "tracks-audio/before2.wav", // путь к треку
   },
   {
     title: "Трек 2 после обработки",
     artist: "Исполнитель 2",
-    audioSrc: "tracks-audio/after2.mp3",
+    audioSrc: "tracks-audio/after2.wav",
   },
   {
     title: "Трек 3 до обработки",
     artist: "Исполнитель 3",
-    audioSrc: "tracks-audio/before3.mp3", // путь к треку
+    audioSrc: "tracks-audio/before3.wav", // путь к треку
   },
   {
     title: "Трек 3 после обработки",
     artist: "Исполнитель 3",
-    audioSrc: "tracks-audio/after3.mp3",
+    audioSrc: "tracks-audio/after3.wav",
   },
 ];
 
